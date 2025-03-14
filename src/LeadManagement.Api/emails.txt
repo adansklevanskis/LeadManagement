@@ -1,0 +1,4 @@
+Lead 1 accepted with new price 900.000
+Lead 2 accepted with new price 675.000
+Lead 1 accepted with new price 900.000
+Lead 2 accepted with new price 675.000
