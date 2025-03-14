@@ -19,7 +19,7 @@
       <div class="card mb-3" *ngFor="let lead of invitedLeads">
         <div class="card-body">
           <h5 class="card-title">{{ lead.firstName }} ({{ lead.category }})</h5>
-          <p class="card-text">Date: {{ lead.dateCreated }}</p>
+          <p class="card-text">Date: {{ lead.dateCreated | date:'fullDate' }}</p>
           <p class="card-text">Suburb: {{ lead.suburb }}</p>
           <p class="card-text">Price: ${{ lead.price }}</p>
           <p class="card-text">{{ lead.description }}</p>
@@ -35,7 +35,7 @@
       <div class="card mb-3" *ngFor="let lead of acceptedLeads">
         <div class="card-body">
           <h5 class="card-title">{{ lead.firstName }} {{ lead.lastName }} ({{ lead.category }})</h5>
-          <p class="card-text">Date: {{ lead.dateCreated }}</p>
+          <p class="card-text">Date: {{ lead.dateCreated | date:'fullDate' }}</p>
           <p class="card-text">Suburb: {{ lead.suburb }}</p>
           <p class="card-text">Price: ${{ lead.price }}</p>
           <p class="card-text">Email: {{ lead.email }}</p>
