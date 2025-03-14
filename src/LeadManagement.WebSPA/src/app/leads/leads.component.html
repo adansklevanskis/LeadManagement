@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <h2 class="text-center text-primary">Lead Management</h2>
+
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#invited">Invited</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#accepted">Accepted</a>
+    </li>
+  </ul>
+
+  <!-- Tabs Content -->
+  <div class="tab-content mt-3">
+    <!-- Invited Tab -->
+    <div class="tab-pane fade show active" id="invited">
+      <h4>Invited Leads</h4>
+      <div class="card mb-3" *ngFor="let lead of invitedLeads">
+        <div class="card-body">
+          <h5 class="card-title">{{ lead.firstName }} ({{ lead.category }})</h5>
+          <p class="card-text">Date: {{ lead.dateCreated }}</p>
+          <p class="card-text">Suburb: {{ lead.suburb }}</p>
+          <p class="card-text">Price: ${{ lead.price }}</p>
+          <p class="card-text">{{ lead.description }}</p>
+          <button class="btn btn-success me-2" (click)="acceptLead(lead.id)">Accept</button>
+          <button class="btn btn-danger" (click)="declineLead(lead.id)">Decline</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Accepted Tab -->
+    <div class="tab-pane fade" id="accepted">
+      <h4>Accepted Leads</h4>
+      <div class="card mb-3" *ngFor="let lead of acceptedLeads">
+        <div class="card-body">
+          <h5 class="card-title">{{ lead.firstName }} {{ lead.lastName }} ({{ lead.category }})</h5>
+          <p class="card-text">Date: {{ lead.dateCreated }}</p>
+          <p class="card-text">Suburb: {{ lead.suburb }}</p>
+          <p class="card-text">Price: ${{ lead.price }}</p>
+          <p class="card-text">Email: {{ lead.email }}</p>
+          <p class="card-text">Phone: {{ lead.phone }}</p>
+          <p class="card-text">{{ lead.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
